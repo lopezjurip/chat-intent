@@ -1,0 +1,56 @@
+{
+  "name": "chat-intent-cli",
+  "version": "1.0.0",
+  "description": "Parse phone number to create intents.",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "repository": "mrpatiwi/chat-intent",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "chat-intent": "bin/chat-intent.js"
+  },
+  "scripts": {
+    "prebuild": "rimraf lib/",
+    "build": "babel src/ --out-dir lib/ --source-maps",
+    "test": "jest"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "author": "Patricio López <lopezjuripatricio@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chat-intent": "^1.0.0",
+    "chat-intent-telegram": "^1.0.0",
+    "chat-intent-whatsapp": "^1.0.0",
+    "ctx-compose": "^1.2.0",
+    "libphonenumber-js": "^0.4.24",
+    "lodash": "^4.17.4",
+    "prettyjson": "^1.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^20.0.4",
+    "rimraf": "^2.6.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "exclude": [
+            "transform-regenerator"
+          ]
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
