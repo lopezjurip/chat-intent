@@ -22,8 +22,6 @@
     "ctx-compose": "^1.2.0",
     "libphonenumber-js": "^0.4.24"
   },
-  "optionalDependencies": {},
-  "peerDependencies": {},
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
