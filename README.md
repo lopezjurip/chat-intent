@@ -23,7 +23,7 @@ intent.use(ChatIntent.middleware.encodeText());
 intent.use(intentWhatsapp());
 intent.use(intentTelegram());
 
-const result = intent.generate("+56 9 8765 4321");
+const { result } = intent.generate("+56 9 8765 4321", { text: "Hello World!" });
 console.log(result);
 ```
 
@@ -37,11 +37,11 @@ Output
   "code": "56",
   "valid": true,
   "whatsapp": {
-    "browser": "https://web.whatsapp.com/send?phone=56987654321",
-    "native": "whatsapp://send?phone=56987654321"
+    "browser": "https://web.whatsapp.com/send?phone=56987654321&text=Hello+World!",
+    "native": "whatsapp://send?phone=56987654321&text=Hello+World!"
   },
   "telegram": {
-    "native": "tg:msg?to=%2B56987654321"
+    "native": "tg://msg?to=+56987654321&text=Hello+World!"
   }
 }
 ```
