@@ -1,0 +1,49 @@
+{
+  "name": "chat-intent",
+  "version": "0.1.0",
+  "description": "Parse phone number to create intents.",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf lib/",
+    "build": "babel src/ --out-dir lib/ --source-maps",
+    "test": "jest"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "author": "Patricio López <lopezjuripatricio@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ctx-compose": "^1.2.0",
+    "libphonenumber-js": "^0.4.24"
+  },
+  "optionalDependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^20.0.4",
+    "rimraf": "^2.6.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "exclude": [
+            "transform-regenerator"
+          ]
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "lerna": "lerna",
+    "postinstall": "lerna bootstrap",
+    "build": "lerna run build",
+    "publish": "lerna publish",
+    "lint": "eslint packages"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.3.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.1.0",
+    "lerna": "^2.0.0",
+    "prettier": "^1.5.3"
+  }
+}

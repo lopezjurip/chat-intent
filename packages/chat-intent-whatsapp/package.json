@@ -1,0 +1,46 @@
+{
+  "name": "chat-intent-whatsapp",
+  "version": "0.1.0",
+  "description": "chat-intent Whatsapp middleware.",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf lib/",
+    "build": "babel src/ --out-dir lib/ --source-maps",
+    "test": "jest"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "author": "Patricio López <lopezjuripatricio@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "optionalDependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^20.0.4",
+    "rimraf": "^2.6.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "exclude": [
+            "transform-regenerator"
+          ]
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
