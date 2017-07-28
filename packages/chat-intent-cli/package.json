@@ -18,7 +18,8 @@
   },
   "files": [
     "lib",
-    "src"
+    "src",
+    "bin"
   ],
   "author": "Patricio López <lopezjuripatricio@gmail.com>",
   "license": "MIT",
