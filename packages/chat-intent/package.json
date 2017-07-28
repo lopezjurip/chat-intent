@@ -1,6 +1,6 @@
 {
   "name": "chat-intent",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "Parse phone number to create intents.",
   "main": "lib/index.js",
   "module": "src/index.js",
