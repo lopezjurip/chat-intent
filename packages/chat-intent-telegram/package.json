@@ -1,6 +1,6 @@
 {
   "name": "chat-intent-telegram",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "chat-intent Telegram middleware.",
   "main": "lib/index.js",
   "module": "src/index.js",
