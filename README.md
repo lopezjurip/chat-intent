@@ -18,8 +18,10 @@ const intentWhatsapp = require("chat-intent-whatsapp").default;
 const intentTelegram = require("chat-intent-telegram").default;
 
 const intent = new ChatIntent();
-intent.use(intentWhatsapp);
-intent.use(intentTelegram);
+intent.use(ChatIntent.middleware.validate());
+intent.use(ChatIntent.middleware.encodeText());
+intent.use(intentWhatsapp());
+intent.use(intentTelegram());
 
 const result = intent.generate("+56 9 8765 4321");
 console.log(result);
@@ -27,7 +29,7 @@ console.log(result);
 
 Output
 
-```js
+```json
 {
   "identifier": "56987654321",
   "phone": "+56 9 8765 4321",

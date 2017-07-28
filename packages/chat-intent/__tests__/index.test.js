@@ -2,13 +2,11 @@
 
 "use strict";
 
-import ChatIntent from "../src";
+import ChatIntent, { middleware } from "../src";
 
 describe("generate", () => {
-  const generator = new ChatIntent();
-
   it("converts string", () => {
-    const expected = "+56 9 8765 4321";
+    const phone = "+56 9 8765 4321";
     const alternatives = [
       "+56 9 8765 4321",
       "+56 9 87654321",
@@ -18,8 +16,29 @@ describe("generate", () => {
       "  +56 9 87654321",
     ];
     for (const alternative of alternatives) {
-      const result = generator.generate(alternative, { country: "CL" });
-      expect(result.phone).toEqual(expected);
+      const generator = new ChatIntent();
+      const { result } = generator.generate(alternative, { country: "CL" });
+      expect(result.phone).toEqual(phone);
     }
+  });
+
+  it("encodes text with middleware", () => {
+    const generator = new ChatIntent();
+    generator.use(middleware.encodeText());
+
+    const phone = "+56 9 8765 4321";
+    const text = "Hello world!";
+    const { options } = generator.generate(phone, { country: "CL", text });
+    expect(options.text).toEqual("Hello+world!");
+  });
+
+  it("works with validate middleware", () => {
+    const generator = new ChatIntent();
+    generator.use(middleware.validate());
+
+    const phone = "+56 9 8765 4321";
+    const { result } = generator.generate(phone, { country: "CL" });
+    expect(result.identifier).toEqual("56987654321");
+    expect(result.valid).toBeTruthy(); // because is undefined.
   });
 });

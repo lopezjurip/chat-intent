@@ -2,7 +2,6 @@
 
 import { getPhoneCode, isValidNumber, asYouType } from "libphonenumber-js";
 import { composeSync } from "ctx-compose";
-import isEmpty from "lodash/isEmpty";
 import replace from "lodash/replace";
 import trim from "lodash/trim";
 
@@ -11,19 +10,25 @@ const DEFAULT = {
 };
 
 export const middleware = {
-  validate({ result }, next) {
+  validate: () => ({ result }, next) => {
     if (isValidNumber(result.phone)) {
       result.valid = true;
-      next();
+      return next();
     } else {
       result.valid = false;
     }
+  },
+  encodeText: () => ({ options }, next) => {
+    if (options.text) {
+      options.text = replace(options.text, / /g, "+");
+    }
+    return next();
   },
 };
 
 export default class ChatIntent {
   constructor() {
-    this.middleware = [middleware.validate];
+    this.middleware = [];
   }
 
   use(...middlewares) {
@@ -39,13 +44,10 @@ export default class ChatIntent {
     const identifier = replace(phone, /([.*+?^=!:${}()|[\]/\\_-\s])/g, "");
 
     const result = { identifier, phone, country, code };
-
-    if (isEmpty(this.middleware)) {
-      return result;
-    } else {
-      const context = { result, options };
-      composeSync(this.middleware)(context);
-      return context.result;
-    }
+    const context = { result, options };
+    composeSync(this.middleware)(context);
+    return context;
   }
 }
+
+ChatIntent.middleware = middleware;
