@@ -25,6 +25,25 @@ const result = intent.generate("+56 9 8765 4321");
 console.log(result);
 ```
 
+Output
+
+```js
+{
+  "identifier": "56987654321",
+  "phone": "+56 9 8765 4321",
+  "country": "CL",
+  "code": "56",
+  "valid": true,
+  "whatsapp": {
+    "browser": "https://web.whatsapp.com/send?phone=56987654321",
+    "native": "whatsapp://send?phone=56987654321"
+  },
+  "telegram": {
+    "native": "tg:msg?to=%2B56987654321"
+  }
+}
+```
+
 ## Development
 
 Clone and install dependencies:
