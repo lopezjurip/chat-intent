@@ -4,6 +4,7 @@
   "description": "Parse phone number to create intents.",
   "main": "lib/index.js",
   "module": "src/index.js",
+  "repository": "mrpatiwi/chat-intent",
   "publishConfig": {
     "access": "public"
   },

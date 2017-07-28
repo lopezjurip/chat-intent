@@ -4,6 +4,7 @@
   "description": "chat-intent Telegram middleware.",
   "main": "lib/index.js",
   "module": "src/index.js",
+  "repository": "mrpatiwi/chat-intent",
   "publishConfig": {
     "access": "public"
   },
