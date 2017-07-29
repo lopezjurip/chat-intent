@@ -54,18 +54,20 @@ module.exports = function createBot(options) {
       invalid: dedent`
         Sorry but the phone number \`<%= phone %>\` is invalid.
       `,
-      answer: dedent`
-        *Phone* <%= phone %>
-        *Country* <%= emoji.flag %> <%= country %> (+<%= code %>)
-        <% if(service.native) { %>
-        *<%= service.name %> Mobile* <%= emoji.native %>
-        <%= service.native %>
-        <% } -%>
-        <% if(service.browser) { %>
-        *<%= service.name %> Browser* <%= emoji.browser %>
-        <%= service.browser %>
-        <% } -%>
-      `,
+      answer: {
+        info: dedent`
+          *Phone* <%= phone %>
+          *Country* <%= emoji.flag %> <%= country %> (+<%= code %>)
+        `,
+        native: dedent`
+          <%= service.name %> Mobile <%= emoji.native %>
+          <%= service.native %>
+        `,
+        browser: dedent`
+          <%= service.name %> Browser <%= emoji.browser %>
+          <%= service.browser %>
+        `,
+      },
     },
     cancel: dedent`
       OK, will cancel the current operation.
@@ -180,6 +182,14 @@ module.exports = function createBot(options) {
         native: emoji["iphone"],
         browser: emoji["globe_with_meridians"],
       };
-      await ctx.sendMessage("service.answer", { parse_mode: "Markdown" });
+
+      const options = { parse_mode: "Markdown" };
+      await ctx.sendMessage("service.answer.info", options);
+      if (ctx.data.service.browser) {
+        await ctx.sendMessage("service.answer.browser", options);
+      }
+      if (ctx.data.service.native) {
+        await ctx.sendMessage("service.answer.native", options);
+      }
     });
 };
