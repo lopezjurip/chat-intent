@@ -16,7 +16,9 @@
     "test": "jest"
   },
   "files": [
-    "src"
+    "src",
+    "docs",
+    "config"
   ],
   "author": {
     "email": "patricio@lopezjuri.com",

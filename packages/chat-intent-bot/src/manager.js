@@ -13,7 +13,9 @@ module.exports = function createSessionManager(config) {
       password: config.get("REDIS:PASSWORD") || undefined,
     });
     return bb.sessionManager.redis({ client });
-  } else {
+  } else if (config.get("SESSION") === "MEMORY") {
     return bb.sessionManager.memory();
+  } else {
+    throw new Error("Unknown session manager storage.");
   }
 };
