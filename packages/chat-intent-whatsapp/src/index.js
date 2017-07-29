@@ -19,6 +19,7 @@ export default function intentWhatsapp() {
     );
 
     ctx.result.whatsapp = {
+      name: "WhatsApp",
       browser: `https://web.whatsapp.com/send${querystring}`,
       native: `whatsapp://send${querystring}`,
     };

@@ -19,6 +19,7 @@ export default function intentTelegram() {
     );
 
     ctx.result.telegram = {
+      name: "Telegram",
       native: `tg://msg${querystring}`,
     };
 
