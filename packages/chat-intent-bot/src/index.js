@@ -31,6 +31,8 @@ const bot = createBot({
   info,
 });
 
+module.exports = bot;
+
 // eslint-disable-next-line no-console
 console.log(dedent`
   Bot Started with:
