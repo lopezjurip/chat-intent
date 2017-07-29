@@ -27,10 +27,9 @@
     "chat-intent": "^1.0.0",
     "chat-intent-telegram": "^1.0.0",
     "chat-intent-whatsapp": "^1.0.0",
-    "ctx-compose": "^1.2.0",
-    "libphonenumber-js": "^0.4.24",
     "lodash": "^4.17.4",
-    "prettyjson": "^1.2.1"
+    "prettyjson": "^1.2.1",
+    "yargs": "^8.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

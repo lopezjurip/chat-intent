@@ -3,7 +3,7 @@
 /* eslint no-console: 0 */
 
 const yargs = require("yargs");
-const createCLI = require("..").default;
+const createCLI = require("../lib").default;
 
 const print = console.log.bind(console);
 
