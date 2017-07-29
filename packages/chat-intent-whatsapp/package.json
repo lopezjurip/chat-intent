@@ -1,6 +1,6 @@
 {
   "name": "chat-intent-whatsapp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "chat-intent Whatsapp middleware.",
   "main": "lib/index.js",
   "module": "src/index.js",

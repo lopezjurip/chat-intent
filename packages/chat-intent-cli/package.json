@@ -1,6 +1,6 @@
 {
   "name": "chat-intent-cli",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Parse phone number to create intents.",
   "main": "lib/index.js",
   "module": "src/index.js",
@@ -24,9 +24,9 @@
   "author": "Patricio López <lopezjuripatricio@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "chat-intent": "^1.0.0",
-    "chat-intent-telegram": "^1.0.0",
-    "chat-intent-whatsapp": "^1.0.0",
+    "chat-intent": "^1.1.0",
+    "chat-intent-telegram": "^1.1.0",
+    "chat-intent-whatsapp": "^1.1.0",
     "lodash": "^4.17.4",
     "prettyjson": "^1.2.1",
     "yargs": "^8.0.2"
