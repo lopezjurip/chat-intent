@@ -41,4 +41,13 @@ describe("generate", () => {
     expect(result.identifier).toEqual("56987654321");
     expect(result.valid).toBeTruthy(); // because is undefined.
   });
+
+  it.only("prefixes with country code", () => {
+    const generator = new ChatIntent();
+    generator.use(middleware.validate());
+    const phone = "987654321";
+    const { result } = generator.generate(phone, { country: "CL" });
+    expect(result.identifier).toEqual("56987654321");
+    expect(result.phone).toEqual("+56 9 8765 4321");
+  });
 });

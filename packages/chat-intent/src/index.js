@@ -1,6 +1,11 @@
 "use strict";
 
-import { getPhoneCode, isValidNumber, asYouType } from "libphonenumber-js";
+import {
+  format,
+  getPhoneCode,
+  isValidNumber,
+  asYouType,
+} from "libphonenumber-js";
 import { composeSync } from "ctx-compose";
 import replace from "lodash/replace";
 import trim from "lodash/trim";
@@ -38,9 +43,10 @@ export default class ChatIntent {
 
   generate(value = "", options = DEFAULT) {
     const formatter = new asYouType(options.country);
-    const phone = formatter.input(trim(value));
+    const input = formatter.input(trim(value));
     const country = formatter["country"] || options.country;
     const code = formatter["country_phone_code"] || getPhoneCode(country);
+    const phone = format(input, country, "International");
     const identifier = replace(phone, /([.*+?^=!:${}()|[\]/\\_-\s])/g, "");
 
     const result = { identifier, phone, country, code };
