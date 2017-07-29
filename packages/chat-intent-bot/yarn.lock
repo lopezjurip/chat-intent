@@ -217,21 +217,21 @@ chalk@^1.0.0:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chat-intent-telegram@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/chat-intent-telegram/-/chat-intent-telegram-1.0.0.tgz#0be2a5ea424e4a608461e3f5e7838f8af52bde57"
+chat-intent-telegram@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/chat-intent-telegram/-/chat-intent-telegram-1.1.0.tgz#d3764057de01546258b226d3ac7ac4675be392bc"
   dependencies:
     qs "^6.5.0"
 
-chat-intent-whatsapp@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/chat-intent-whatsapp/-/chat-intent-whatsapp-1.0.0.tgz#1492bc6cf9565db421c1718cbf84cda3fcde21ac"
+chat-intent-whatsapp@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/chat-intent-whatsapp/-/chat-intent-whatsapp-1.1.0.tgz#a84b3f858b4ff8707d9ce78f0431f4fe0a343cbd"
   dependencies:
     qs "^6.5.0"
 
-chat-intent@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/chat-intent/-/chat-intent-1.0.0.tgz#2aefc123e297462fdde13b840c8b22a0e6ac252b"
+chat-intent@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/chat-intent/-/chat-intent-1.1.0.tgz#0baa558be2e6ee0245cc4857aaf9861af8a4e75a"
   dependencies:
     ctx-compose "^1.2.0"
     libphonenumber-js "^0.4.24"

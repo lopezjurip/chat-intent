@@ -1,0 +1,7 @@
+✨ Keep your address book clean ✨
+
+You don't need to add phone numbers to your Contacts to start talking with them.
+
+Use this bot to create links that starts conversations with a phone number without adding them to contacts on:
+- /whatsapp
+- /telegram
