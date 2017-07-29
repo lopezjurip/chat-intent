@@ -1,0 +1,50 @@
+{
+  "name": "chat-intent-bot",
+  "version": "1.0.0",
+  "description": "Parse phone number to create intents.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrpatiwi/chat-intent.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "test": "jest"
+  },
+  "files": [
+    "src"
+  ],
+  "author": {
+    "email": "patricio@lopezjuri.com",
+    "name": "Patricio López Juri",
+    "url": "https://lopezjuri.com",
+    "username": "mrpatiwi"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "bot-brother": "^2.1.5",
+    "chat-intent": "^1.0.0",
+    "chat-intent-telegram": "^1.0.0",
+    "chat-intent-whatsapp": "^1.0.0",
+    "dedent": "^0.7.0",
+    "dotenv": "^4.0.0",
+    "libphonenumber-js": "^0.4.24",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "mz": "^2.6.0",
+    "nconf": "^0.8.4",
+    "node-emoji": "^1.8.1",
+    "redis": "^2.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}

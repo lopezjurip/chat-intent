@@ -1,0 +1,5 @@
+start - Start this wonderful bot.
+telegram - Generate Telegram link.
+whatsapp - Generate WhatsApp link.
+about - Version, repository and donations.
+help - Looking for help?
