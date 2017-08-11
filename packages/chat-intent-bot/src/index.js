@@ -23,7 +23,6 @@ intent.use(intentTelegram());
 
 const manager = createSessionManager(config);
 
-// eslint-disable-next-line no-unused-vars
 const bot = createBot({
   intent,
   manager,

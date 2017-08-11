@@ -183,13 +183,31 @@ module.exports = function createBot(options) {
         browser: emoji["globe_with_meridians"],
       };
 
-      const options = { parse_mode: "Markdown" };
-      await ctx.sendMessage("service.answer.info", options);
+      // await ctx.inlineKeyboard([
+      //   [{ "Phone Call": { url: _.replace(ctx.data.phone, / /g, "") } }],
+      // ]);
+      await ctx.sendMessage("service.answer.info", {
+        parse_mode: "Markdown",
+        // reply_markup: { inline_keyboard: [[]] },
+      });
+
       if (ctx.data.service.browser) {
-        await ctx.sendMessage("service.answer.browser", options);
+        await ctx.inlineKeyboard([
+          [{ Start: { url: ctx.data.service.browser } }],
+        ]);
+        await ctx.sendMessage("service.answer.browser", {
+          parse_mode: "Markdown",
+          reply_markup: { inline_keyboard: [[]] },
+        });
       }
       if (ctx.data.service.native) {
-        await ctx.sendMessage("service.answer.native", options);
+        await ctx.inlineKeyboard([
+          [{ Start: { url: ctx.data.service.native } }],
+        ]);
+        await ctx.sendMessage("service.answer.native", {
+          parse_mode: "Markdown",
+          reply_markup: { inline_keyboard: [[]] },
+        });
       }
     });
 };
