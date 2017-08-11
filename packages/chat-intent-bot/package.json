@@ -24,7 +24,10 @@
     "email": "patricio@lopezjuri.com",
     "name": "Patricio López Juri",
     "url": "https://lopezjuri.com",
-    "username": "mrpatiwi"
+    "username": "mrpatiwi",
+    "btc": "3KDbM5Y9UcHeuN5innf83gxxxiStxZ8WdE",
+    "eth": "0xcc3321cCF07Ab2F8b2E29f7dE9925762A2A3b33d",
+    "paypal": "https://www.paypal.me/lopezjuri/1"
   },
   "license": "MIT",
   "dependencies": {

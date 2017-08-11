@@ -35,17 +35,28 @@ module.exports = function createBot(options) {
       /<%= command %>
       <% }); -%>
     `,
-    about: dedent`
-      *<%= info.name %> (<%= info.version %>)*
-      *License:* <%= info.license %>
-      *Repository:* <%= info.repository.url %>
+    about: {
+      info: dedent`
+        *<%= info.name %> (<%= info.version %>)*
+        *License:* <%= info.license %>
+        *Repository:* <%= info.repository.url %>
 
-      :bust_in_silhouette: *Author:*
-       • <%= info.author.name %>
-       • <%= info.author.email %>
-       • <%= info.author.url %>
-       • @<%= info.author.username %>
-    `,
+        :bust_in_silhouette: *Author:*
+        • <%= info.author.name %>
+        • <%= info.author.email %>
+        • <%= info.author.url %>
+        • @<%= info.author.username %>
+      `,
+      donations: dedent`
+        :pray: *Donations:*
+        - PayPal:
+          <%= info.author.paypal %>
+        - Bitcoin:
+          \`<%= info.author.btc %>\`
+        - Ether:
+          \`<%= info.author.eth %>\`
+      `,
+    },
     service: {
       ask: dedent`
         *Write me the phone number, so I can generate some links.*
@@ -118,7 +129,8 @@ module.exports = function createBot(options) {
    */
   bot.command("about").invoke(async ctx => {
     ctx.data.info = info;
-    await ctx.sendMessage("about", { parse_mode: "Markdown" });
+    await ctx.sendMessage("about.info", { parse_mode: "Markdown" });
+    await ctx.sendMessage("about.donations", { parse_mode: "Markdown" });
   });
 
   /**
